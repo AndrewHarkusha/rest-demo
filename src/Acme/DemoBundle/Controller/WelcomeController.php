@@ -3,6 +3,7 @@
 namespace Acme\DemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class WelcomeController extends Controller
 {
@@ -15,5 +16,12 @@ class WelcomeController extends Controller
          */
 
         return $this->render('AcmeDemoBundle:Welcome:index.html.twig');
+    }
+
+    public function apiAction()
+    {
+        $user = $this->getUser();
+
+        return new JsonResponse(['hello' => $user->getUsername()]);
     }
 }

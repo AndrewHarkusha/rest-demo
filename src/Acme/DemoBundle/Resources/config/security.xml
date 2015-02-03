@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="geek.security.authentication.provider"
+            class="Acme\DemoBundle\Security\Provider\GeekProvider" public="false">
+            <argument /> <!-- User Provider -->
+        </service>
+
+        <service id="geek.security.authentication.listener"
+            class="Acme\DemoBundle\Security\Firewall\GeekListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service" id="security.authentication.manager" />
+        </service>
+    </services>
+</container>
