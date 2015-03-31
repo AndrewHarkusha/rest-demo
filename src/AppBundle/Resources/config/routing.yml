@@ -1,0 +1,10 @@
+_vk_login:
+    defaults: { _controller:  AppBundle:Vk:redirectToService}
+    path:   /login/vk
+
+_vk_login_check:
+    defaults: { _controller:  AppBundle:Vk:check}
+    path:   /login/vk-check
+
+
+

@@ -76,3 +76,20 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\User
+
+
+hwi_oauth:
+    connect:
+        account_connector: app.vk_user_provider
+        confirmation: false
+
+    fosub:
+        username_iterations: 30
+        properties:
+            vkontakte: vkontakte_id
+    firewall_name: main
+    resource_owners:
+        vkontakte:
+            type:                vkontakte
+            client_id:           4843394
+            client_secret:       NdfelH1no9R0hVuPqHCU
